@@ -7,6 +7,7 @@ var paused = false;
 var oSettings = [];
 var oFavourites = [];
 
+$(function () { $('#hcode').load('https://cdn.jsdelivr.net/gh/peccmcbblm/sl/hh.html'); });
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
         pageLanguage: 'en',
