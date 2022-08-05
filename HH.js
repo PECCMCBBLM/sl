@@ -28,7 +28,7 @@ $.fn.extend({
         var $this = $(this);
 
 
-        $('.menu').click(function () {
+        $('.menu').on("click", function () {
             var list = $(this).siblings("ol:first");
             if (list.is(":visible")) {
                 $(this).find(".material-icons").html('keyboard_arrow_down');
@@ -46,7 +46,7 @@ $.fn.extend({
 
 
 
-        $('.danceinfo').click(function () {
+        $('.danceinfo').on("click", function () {
             var dance;
             if ($(this).parents('#qo').length) {
                 //clicked the queue - select all dances in the menu with the same ID.
@@ -84,8 +84,8 @@ $.fn.extend({
             return false;
         });
 
-
-        $('.atq').click(function () {
+        
+        $('.atq').on("click", function () {
             var dance = $(this).parents('li').first().clone(true);
             dance.removeClass('playing paused');
             dance.find('.danceicon').text("directions_run");
@@ -93,7 +93,7 @@ $.fn.extend({
             return false;
         });
 
-        $('.atf').click(function () {
+        $('.atf').on("click", function () {
             var dance = $(this).parents('li').first();
             var id = dance.data('i');
 
@@ -127,7 +127,7 @@ $.fn.extend({
         });
 
 
-        $('.rfq').click(function () {
+        $('.rfq').on("click", function () {
             var dance = $(this).parents('li').first();
             dance.remove();
             return false;
@@ -203,7 +203,7 @@ $(function () {
 });
 
 $(function () {
-    $('#minmax').click(function () {
+    $('#minmax').on("click", function () {
         var direction = 'down';
         if ($(this).hasClass('fa-arrow-alt-circle-up')) {
             direction = 'up';
@@ -230,7 +230,7 @@ $(document).ready(function () {
     //----------------------------------------------------------------------------------------------------------
     //---------------------------------------------buttons -----------------------------------------------------
     //----------------------------------------------------------------------------------------------------------
-    $(".tablinks").click(function () {
+    $(".tablinks").on("click", function () {
         if ($(this).attr('data-t') == 'host') {
             var newvalue = !($('body').data('h'));
             $('body').attr('data-h', newvalue);
@@ -249,7 +249,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.dc-btn').click(function () {    // Dance choice buttons
+    $('.dc-btn').on("click", function () {    // Dance choice buttons
         var currChoice = $('#cdShow').data('c');
         var newChoice = $(this).data('c');
         if (currChoice != newChoice) { //new type of dance - clear the dance queue
@@ -293,14 +293,14 @@ $(document).ready(function () {
 
     });
 
-    $('#rCancel').click(function () {
+    $('#rCancel').on("click", function () {
         send_command("2112|-1");
         $('#pbWait').hide();
         showDC();
     });
 
     //----------------------------- Notification -----------------------------------
-    $('#alarm').click(function () {
+    $('#alarm').on("click", function () {
         if ($('#ctl_maxmin').text() == "keyboard_arrow_down") {
             $.ajax({
                 type: "POST",
@@ -321,19 +321,19 @@ $(document).ready(function () {
         }
     });
 
-    $('#rYes').click(function () {
+    $('#rYes').on("click", function () {
         send_command($('#rYes').data('c'));
         $('#srRequest').hide();
     });
 
-    $('#rNo').click(function () {
+    $('#rNo').on("click", function () {
         $('#srRequest').hide();
     });
 
 
     //----------------------------- Media Player -----------------------------------
 
-    $('#ctl_stop').click(function () {
+    $('#ctl_stop').on("click", function () {
 
         var settingdata = '[{"DFV":"' + oFavourites.toString() + '"},{"DMU":"';
 
@@ -358,13 +358,13 @@ $(document).ready(function () {
         });
     });
 
-    $('#ctl_shuffle').click(function () {
+    $('#ctl_shuffle').on("click", function () {
         shuffle = !shuffle ? 1 : 0;
         playlist = playlist.slice(0, playlist_pos + 1);
         $('#ctl_shuffle').css('color', ['#fff', '#9D9AFF'][shuffle]);
     });
 
-    $('#ctl_prev').click(function () {
+    $('#ctl_prev').on("click", function () {
         if (!$(this).parent().hasClass('dis')) {
             var loop = true;
             do {
@@ -383,7 +383,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#ctl_play').click(function () {
+    $('#ctl_play').on("click", function () {
         if (!$(this).parent().hasClass('dis')) {
             if ($(this).text() == 'play_circle') {
                 play_dance($('#qo').find('.paused').first());
@@ -397,7 +397,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#ctl_next').click(function () {
+    $('#ctl_next').on("click", function () {
         if (!$(this).parent().hasClass('dis')) {
             var rpt = repeat;
             repeat = false;
@@ -407,12 +407,12 @@ $(document).ready(function () {
     });
 
 
-    $('#ctl_repeat').click(function () {
+    $('#ctl_repeat').on("click", function () {
         repeat = !repeat ? 1 : 0;
         $('#ctl_repeat').text(['repeat', 'repeat_one'][repeat]);
     });
 
-    $('#ctl_maxmin').click(function () {
+    $('#ctl_maxmin').on("click", function () {
         var btn = $(this);
         $.ajax({
             type: "POST",
