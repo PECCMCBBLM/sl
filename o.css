@@ -1,0 +1,1107 @@
+﻿/*general elements - applies to all*/
+
+:focus {
+    outline: 0;
+}
+
+body {
+    overflow: hidden;
+    top: 0 !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    background-color: #000;
+    font-family: 'Roboto','Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+    max-width: 512px;
+    user-select: none;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.texcen {
+    text-align: center;
+}
+
+
+.tab {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.cell {
+    display: table-cell;
+    text-align: center;
+}
+
+/*------------------------------------
+/*         General Controls
+--------------------------------------*/
+
+.in {
+    /*text input box*/
+    display: inline-block;
+    border: none;
+    color: #fff;
+    background-color: #090909;
+    height: 23px;
+    padding-left: 8px;
+    font-size: 19px;
+}
+
+::-webkit-input-placeholder {
+    color: #999;
+}
+
+/*----------------BOX-------------------*/
+
+.box {
+    color: #9D9AFF;
+    background-color: #302B34;
+    padding-top: 6px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 8px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    box-shadow: 0px 3px 10px #090909;
+    overflow: visible;
+}
+
+.h {
+    color: #FFF;
+    font-size: 110%;
+}
+
+.btn {
+    background-color: #9D9AFF;
+    border: none;
+    color: #191919;
+    padding: 3px 15px 0px 15px;
+    text-align: center;
+    display: inline-block;
+    margin: 0px 5px 0 5px;
+}
+
+    .btn:active {
+        -webkit-transform: translateY(1px);
+    }
+
+.no {
+    background-color: #B71D1D;
+}
+
+.yes {
+    background-color: #1db954;
+}
+
+.optcont {
+    display: inline-block;
+}
+
+    .optcont input {
+        opacity: 0;
+        cursor: pointer;
+        display: inline-block;
+        margin-left: 15px;
+    }
+
+    .optcont .chk {
+        height: 21px;
+        width: 21px;
+        border-radius: 50%;
+        -webkit-transform: translateX(-27px) translateY(-1px);
+    }
+
+    .optcont .chk {
+        background-color: #050505;
+    }
+
+    .optcont input:checked ~ .chk {
+        background-color: #050505;
+    }
+
+    .optcont .chk:after {
+        top: 3px;
+        left: 3px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #9D9AFF;
+    }
+
+.chkcont {
+    display: inline-block;
+}
+
+.chkcont, .optcont {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+}
+
+    /* Hide the browser's default checkbox */
+    .chkcont input {
+        opacity: 0;
+        cursor: pointer;
+    }
+
+
+
+/* Create a custom checkbox */
+
+.chk {
+    position: absolute;
+    top: 0;
+    margin-right: 10px;
+    -webkit-transform: translate(-15px, 3px);
+}
+
+.chkcont .chk {
+    height: 20px;
+    width: 20px;
+    background-color: #666;
+}
+
+/* When the checkbox is checked, add a blue background */
+
+.chkcont input:checked ~ .chk {
+    background-color: #9D9AFF;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.chk:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+
+input:checked ~ .chk:after {
+    display: inline-block;
+}
+
+/* Style the checkmark/indicator */
+
+.chkcont .chk:after {
+    top: 2px;
+    left: 6px;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+}
+
+
+/*------------SCROLLBARS----------------*/
+
+::-webkit-scrollbar {
+    width: 14px;
+    background-color: #333;
+    border-left: solid 1px #9D9AFF;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #9D9AFF;
+}
+
+/*-------------SLIDERS------------------*/
+
+.ui-slider {
+    margin: 10px;
+    background-color: #444;
+    border: solid 1px #9D9AFF;
+    display: block;
+    height: 12px;
+    position: relative;
+}
+
+.ui-slider-range {
+    background-color: #5522bb;
+    display: block;
+    height: 12px;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+}
+
+.ui-slider-handle {
+    border: solid 1px #9D9AFF;
+    margin-left: -10px;
+    background-color: #9D9AFF;
+    cursor: default;
+    display: block;
+    height: 20px;
+    position: absolute;
+    text-align: left;
+    top: -5px;
+    width: 20px;
+    z-index: 2;
+}
+
+    .ui-slider-handle:active {
+        background-color: #ddd;
+    }
+
+/*--------------INFO------------------*/
+
+.info {
+    position: relative;
+}
+
+.infob {
+    font-size: 22px;
+    color: #DDD;
+    -webkit-transform: translateY(5px);
+}
+
+    .infob:hover {
+        color: #9D9AFF;
+    }
+
+        .infob:hover + .infot {
+            visibility: visible;
+        }
+
+.infot {
+    color: #000;
+    visibility: hidden;
+    position: absolute;
+    left: 0%;
+    z-index: 99999;
+    max-width: 375px;
+    min-width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #9D9AFF;
+    box-shadow: 0px 3px 10px #000;
+    white-space: normal;
+    -webkit-transform: translateY(34px);
+}
+
+
+.abv {
+    transform: translateY(-100%);
+}
+/*------------------------------------
+/*        notification popup
+--------------------------------------*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 512px;
+    height: 512px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+    padding: 20px;
+    margin: 15% auto;
+    width: 80%;
+    color: #9D9AFF;
+    background-color: #302B34;
+    box-shadow: 0px 3px 10px #090909;
+    text-align: center;
+}
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/*------------------------------------
+/*        poseball popup
+--------------------------------------*/
+.pb {
+    margin-top: 30px;
+    margin-left: 134px;
+    border-radius: 50%;
+    height: 140px;
+    width: 140px;
+    background: radial-gradient(circle at 100px 100px, #5cabff, #003e80);
+}
+
+    .pb:before {
+        position: absolute;
+        margin-left: -70px;
+        content: '';
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+        background: radial-gradient(circle at 100px 100px, #ff66cc, #4d0033);
+        animation: colchange 2s linear infinite;
+    }
+
+
+@keyframes colchange {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*------------------------------------
+/*              tabs
+--------------------------------------*/
+
+.tabbar {
+    /*enclosing div for background --- DO WE NEED THIS OR CAN IT BE ROLLED INTO TABROW?*/
+    background-color: #090909;
+    color: #FFF;
+    width: 512px;
+}
+
+
+.tabrow {
+    /*ul for li*/
+    width: 390px;
+    margin: 2px 0px 0px;
+    padding-left: 7px;
+    font-size: 24px;
+    display: inline-block;
+}
+
+.tabbar img {
+    /*Hybrid Logo*/
+    width: 15%;
+    position: absolute;
+    top: 2px;
+    right: 218.5px;
+}
+
+.wctl {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+    .wctl i {
+        font-size: 29px !important;
+        padding-top: 5px;
+        cursor: pointer;
+    }
+
+        .wctl i:active {
+            -webkit-transform: scale(0.9, 0.9);
+        }
+
+.ctl_stop:hover {
+    color: #F66;
+}
+
+.tablinks {
+    /*Tab buttons*/
+    cursor: pointer;
+    color: #FFF;
+    width: 40px;
+    height: 32px;
+    text-align: center;
+    padding-top: 5px;
+    display: inline-block;
+}
+
+    .tablinks:active {
+        -webkit-transform: scale(0.9, 0.9);
+    }
+
+    .tablinks.selected {
+        color: #9D9AFF;
+        border-bottom: 2px solid #9D9AFF;
+    }
+
+        .tablinks.selected:active {
+            -webkit-transform: scale(1, 1)
+        }
+
+.tt {
+    font-size: 16px;
+    float: left;
+    background-color: #000;
+    padding: 2px;
+    -webkit-transform: translateY(15px);
+    visibility: hidden;
+    transition: 0s visibility;
+    color: #fff;
+    position: relative;
+    z-index: 99999;
+}
+
+.tablinks:hover .tt {
+    visibility: visible;
+    transition-delay: 600ms;
+}
+
+.tabcontent {
+    /*Tabs*/
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #7f80b5;
+    overflow: auto;
+    width: 512px;
+    height: 396px;
+}
+
+/*------------------------------------
+/*      Media Player Bar
+--------------------------------------*/
+
+.control {
+    /*Main Div container*/
+    color: #FFF;
+    background-color: #090909;
+    width: 512px;
+    height: 65px;
+}
+
+    .control .material-icons {
+        cursor: pointer;
+    }
+
+        .control .material-icons:active {
+            -webkit-transform: scale(0.9, 0.9);
+        }
+
+.mediac {
+    /* All Control buttons*/
+    height: 34px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.ppn {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.dis .material-icons {
+    color: #333;
+    cursor: default;
+}
+
+.ppn i {
+    /*Previous Play Next*/
+    font-size: 34px;
+}
+
+.mediac .small {
+    font-size: 18px;
+    -webkit-transform: translateY(-7px);
+}
+
+    .mediac .small:active {
+        -webkit-transform: scale(0.9, 0.9) translateY(-8px);
+    }
+
+.mediac .wctl {
+    top: 447px;
+}
+
+
+.alarm {
+    display: none;
+    position: absolute;
+    top: 454px;
+    right: 90px;
+    animation: blinker 1s linear infinite;
+    cursor: pointer;
+}
+
+    .alarm:active {
+        -webkit-transform: scale(0.9, 0.9);
+    }
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+        color: #9D9AFF;
+    }
+}
+
+.mediap {
+    /*Now Playing Bar*/
+    color: #9D9AFF;
+    text-align: center;
+    height: 30px;
+    font-weight: bold;
+}
+
+#np {
+    display: inline-block;
+    margin: 0px;
+    height: 20px;
+    max-width: 307px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.timer {
+    /*prog and remain times*/
+    font-size: 14px;
+    position: absolute;
+    top: 495px;
+    font-weight: 400;
+}
+
+#prog {
+    /*progress of song*/
+    right: 445px;
+}
+
+#remain {
+    /*Length of song (could be remaining... check on spotify)*/
+    left: 445px;
+}
+
+.mediap .ui-progressbar {
+    margin-left: 75px;
+    margin-top: -3px;
+    width: 362px;
+    background-color: #555;
+    display: block;
+    font-size: 16px;
+    height: 3px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: left;
+}
+
+.mediap .ui-progressbar-value {
+    background-color: #DDD;
+    display: block;
+    margin-bottom: -1px;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-top: -1px;
+    text-align: left;
+    height: 4px;
+}
+
+/*------------------------------------
+            Dance Choice Tab Only
+--------------------------------------*/
+/*--------Dance Choice popup----------*/
+
+.dc-content {
+    width: 360px;
+    background-color: #302B34;
+    margin-top: 15px;
+    margin-left: 66px;
+    box-shadow: 0px 3px 10px #090909;
+    display: flex;
+    padding: 10px 0 10px 20px;
+}
+
+
+.dc-btn {
+    position: relative;
+    cursor: pointer;
+    background-color: #211e24;
+    border: solid 3px #DDD;
+    color: #DDD;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    display: inline-block;
+    margin: 10px 5px;
+    width: 150px;
+    height: 150px;
+    padding: 60px 0px 10px 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    line-height: 1em; /* a */
+}
+
+    .dc-btn:active {
+        transform: scale(0.97, 0.97);
+        background-color: #4d4654;
+    }
+
+    .dc-btn i {
+        position: absolute;
+        top: 10px;
+        left: 45px;
+        font-size: 55px;
+    }
+
+#sop {
+    display: none;
+    color: #DDD;
+    z-index: 9999999;
+}
+
+@keyframes sopblink {
+    50% {
+        opacity: 0.5;
+        color: #9D9AFF;
+    }
+}
+
+/*------------------------------------
+            Dance Menu Tab Only
+--------------------------------------*/
+
+/*--------Search Bar----------*/
+.ilb {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+#sch {
+    /*Search*/
+    margin-left: 308px;
+    padding: 1px;
+    width: 180px;
+}
+
+
+
+/*--------Dance Choice/Sync buttons----------*/
+.dBtn {
+    z-index: 998;
+    border: none;
+    border-radius: 7px;
+    position: absolute;
+    padding: 1px;
+    top: 34px;
+    color: #DDD;
+    width: 25px;
+    height: 25px;
+    background-color: #302B34;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 5px;
+}
+
+    .dBtn:active {
+        transform: translateY(1px);
+    }
+
+#cdShow {
+    left: 1px;
+}
+
+#avList {
+    left: 40px
+}
+
+    #avList i {
+        font-size: 22px;
+        margin-top: 2px;
+    }
+
+
+#cdShow img {
+    width: 80%;
+    height: 90%;
+}
+
+/*--------AV Sync List----------*/
+
+.twopanel {
+    width: 200px;
+    height: 350px;
+    max-height: 350px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#avModal .modal-content {
+    padding-top: 5px;
+    height: 365px;
+    width: 350px;
+}
+
+
+.uList {
+    height: 100%;
+    background-color: #111;
+    margin: 5px 0 0 0;
+    list-style: none;
+    padding: 0 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+    .uList li {
+        cursor: pointer;
+        display: block;
+        text-decoration: none;
+    }
+
+.av {
+    /*av container*/
+    background-color: #151515;
+    line-height: 20px;
+    font-size: 20px;
+    color: #fff;
+    padding: 5px;
+    border-bottom: solid 1px #333;
+    box-shadow: 0px 3px 10px #111;
+}
+
+    .av:hover {
+        background-color: #555;
+    }
+
+/*------------------------------------
+/*       Queue Tab Only
+--------------------------------------*/
+
+/*------------------------------------
+/*       AvList Tab Only
+--------------------------------------*/
+#avRefresh {
+    padding: 1px 3px 0px 3px;
+    position: absolute;
+    left: 231px;
+    top: 200px;
+}
+
+infob
+/*------------------------------------
+/*       Settings Tab Only
+--------------------------------------*/
+#clrfav b {
+    cursor: pointer;
+}
+
+#clrfav:hover {
+    color: #ddd;
+}
+
+/*------------------------------------
+/*       Host Selector Only
+--------------------------------------*/
+
+
+body[data-h=true] .hh, .atf {
+    display: none;
+}
+
+body[data-h=false] .hs {
+    display: none;
+}
+
+body[data-h=true] .hd {
+    pointer-events: none;
+    color: #666;
+    border-color: #666;
+}
+
+
+
+
+/*------------------------------------
+/*       Menu and Dances
+--------------------------------------*/
+
+.cdo {
+    /*Menu list*/
+    width: 483px;
+    padding: 0;
+    padding-bottom: 100px;
+    margin: 0;
+    list-style: none;
+    padding-left: 7px;
+}
+
+#qo {
+    padding-left: 25px;
+}
+
+    #qo li {
+        cursor: -webkit-grab;
+    }
+
+#do.cdo ol {
+    margin-top: 2px;
+    padding-left: 20px;
+    display: none;
+}
+
+#do.cdo li {
+    cursor: pointer;
+}
+
+.cdo li {
+    display: block;
+    text-decoration: none;
+}
+
+.menu {
+    /*menu containing dances*/
+    color: #fff;
+    background-color: #302B34;
+    padding: 5px;
+    border-bottom: solid 1px #1F1F1F;
+    box-shadow: 0px 3px 10px #090909;
+    line-height: 24px;
+    font-size: 24px;
+}
+
+    .menu:last-child {
+        border: none;
+    }
+
+/*-------------DANCE-----------------*/
+
+.dance {
+    /*dance container*/
+    background-color: #151515;
+    line-height: 20px;
+    font-size: 20px;
+    color: #fff;
+    padding: 5px;
+    margin-right: 25px;
+    border-bottom: solid 1px #333;
+    box-shadow: 0px 3px 10px #111;
+}
+
+    .dance:last-child {
+        border: none;
+    }
+
+    .dance:hover .popup {
+        display: inline-block;
+    }
+
+.dn {
+    max-width: 375px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/*-------------DANCE STYLES----------------- */
+
+.played {
+    background-color: #999;
+}
+
+.playing {
+    background-color: #1db954;
+}
+
+    .playing .danceicon {
+        animation: spin 2s linear infinite;
+    }
+
+.paused .danceicon {
+    animation: none !important;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*-----------DANCE POPUP MENU-------------- */
+
+.dance .popup .material-icons:hover {
+    cursor: help;
+}
+
+    .dance .popup .material-icons:hover + .dropdown {
+        display: block;
+    }
+
+.dance .popup .dropdown:hover {
+    display: block;
+}
+
+.dance .danceinfo {
+    display: flex;
+}
+
+.dance .popup {
+    display: none;
+    float: right;
+    position: relative;
+}
+
+.dropdown {
+    cursor: default;
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    top: 0;
+    transform: translateX(-100%);
+    text-align: center;
+    color: #222;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 700;
+    background-color: #9D9AFF;
+    box-shadow: 0px 3px 10px #000;
+    font-size: 16px;
+}
+
+.infomenu span {
+    cursor: pointer;
+}
+
+    .infomenu span:hover {
+        color: #FFF;
+    }
+
+.infomenu {
+    color: #222;
+    font-size: 16px;
+}
+
+.infotext {
+    font-size: 14px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-top: solid 1px #000;
+    margin-top: 5px;
+    max-width: 250px;
+}
+
+    .infotext a {
+        color: #222;
+    }
+
+        .infotext a:hover {
+            color: #FFF;
+        }
+
+.atq,
+.atf,
+#qo :not(.playing) .rfq {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.rfq,
+#qo .atq,
+#qo .playing .rfq {
+    display: none;
+}
+
+/*------------------------------------
+/*     Google Translate Element
+--------------------------------------*/
+
+#google_translate_element {
+    position: absolute;
+    top: 10px;
+    left: 388px !important;
+    z-index: 99999;
+}
+
+    #google_translate_element:active {
+        -webkit-transform: scale(0.9, 0.9) translateX(2px);
+    }
+
+.goog-te-gadget {
+    font-family: Roboto,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+}
+
+.goog-te-gadget-simple {
+    background-color: #090909 !important;
+    border: none !important;
+    padding: 4px !important;
+    font-size: 18px !important;
+    line-height: 10px !important;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.goog-te-banner-frame {
+    display: none;
+}
+
+#goog-gt-tt {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.goog-te-menu2 {
+    max-width: 250px;
+}
+
+.goog-te-menu-value span:nth-child(5) {
+    color: #1f1f2e !important;
+    font-size: 0 !important;
+}
+
+.goog-te-menu-value span:nth-child(1) {
+    display: none;
+}
+
+.goog-te-menu-value span:nth-child(3) {
+    display: none;
+}
+
+.goog-te-menu-value span:nth-child(5)::before {
+    font-family: 'Material Icons';
+    font-weight: 900;
+    content: '\e8e2';
+    color: #FFF;
+    font-size: 22px;
+    position: absolute;
+    top: 4.5px;
+}
+
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+.x {
+    display: none;
+}
